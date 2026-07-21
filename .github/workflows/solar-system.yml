@@ -94,12 +94,9 @@ jobs:
       environment:
         name: development
       steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v6
       - name: Kind
         uses: helm/kind-action@v1
-      - name: run kubectl apply
-        run: |
+      - run: |
           sleep 60
           kubectl -n kube-system get pod
           set +e
